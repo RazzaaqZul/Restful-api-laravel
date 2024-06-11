@@ -67,3 +67,48 @@ Atur Register dan throw httpexception
 daftarkan ke RouteServiceProvider lalu pergi ke routes api
 
 Lalukan test
+
+# Membuat Login Request
+
+`php artisan make:request UserLoginRequest`
+
+masuk ke UserResource, add atribute tambahan
+Buat controller login di UserController
+Masukkan Sedeer User untuk pengetesan
+
+# GET User
+
+UserController, Tidak perlu bikin Custom Request? tidak perlu karena
+tidak butuh parameter.
+
+dalam mendapatkan User di DB, perlu verifikasi token
+Buatlah middleware untuk memilah data token yg masuk
+
+`artisan make:middleware ApiAuthMiddleware`
+
+implementasi Authenticable di class UserModel
+registrasi di api router
+
+# UPDATE User
+
+`php artisan make:request UserUpdateRequest`
+Bikin di UserController
+
+# DELETE or Logout User
+
+UseController, hapus
+
+
+
+
+`php artisan make:request ContactCreateRequest`
+php artisan make:resource ContactResource
+ php artisan make:controller ContactController
+
+   php artisan make:request ContactUpdateRequest
+
+
+
+
+
+php artisan make:resource ContactCollection --collection

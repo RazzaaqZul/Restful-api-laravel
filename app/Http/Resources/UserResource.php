@@ -18,6 +18,9 @@ class UserResource extends JsonResource
         "id"=> $this->id,
         "username"=> $this->username,
         "name"=> $this->name,
+        // Login mengembalikan token
+        // jadi kalau tidak null, kita masukkan ke token
+        "token" => $this->whenNotNull($this->token)
        ];
     }
 }
